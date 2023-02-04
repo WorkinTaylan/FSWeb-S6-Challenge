@@ -5,3 +5,17 @@ body {
   background-image: url('./images/sw-bg.jpg');
   background-size: cover;
 }
+
+.dropdown-menu.active{
+  opacity:1;
+  visibility: visible;
+  transform:translateY(0);
+  transition: var(--speed);
+}
+
+.dropdown-menu.inactive{
+  opacity:0;
+  visibility: hidden;
+  transform:translateY(-20px);
+  transition: var(--speed) ease;
+}
