@@ -6,16 +6,54 @@ body {
   background-size: cover;
 }
 
-.dropdown-menu.active{
-  opacity:1;
-  visibility: visible;
-  transform:translateY(0);
-  transition: var(--speed);
+h1 {
+  font-size: 42px;
+  color: var(--text-primary);
+  margin: 0px;
+  margin-bottom: 30px;
 }
 
-.dropdown-menu.inactive{
-  opacity:0;
-  visibility: hidden;
-  transform:translateY(-20px);
-  transition: var(--speed) ease;
+.accordion-simple > .active {
+  display: block;
+}
+
+.accordion-content .inactive{
+  display: none;
+}
+
+.accordion-content > div{
+  background-color: red;
+  margin-bottom: 20px;
+  padding: 0px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.accordion-title{
+  color: var(--text-secondary);
+  padding-bottom: 20px;
+  font-weight: 500;
+}
+
+.accordion-contentHeading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion-contentHeading .active{
+  color: var(--text-primary);
+}
+
+.accordion-contentHeading h3{
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.accordion-content p {
+  margin: 0px;
+  padding-bottom: 30px;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }

@@ -5,12 +5,10 @@ import Karakterler from "./components/Karakter";
 import Info from './components/Info';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import { Dropdown } from 'bootstrap';
-import { DropdownItem } from 'reactstrap';
+
 
 const App = () => {
 
-  const [open, setOpen]=useState(false);
   /*const [char, setChar]=useState([]);
   const [pageNumber, setPageNumber]=useState("2");
 
@@ -39,19 +37,13 @@ const App = () => {
     <div className="App">
       
       <h1 className="Header">Karakterler</h1>
-      <div className='menu-container'>
-        <div className='menu-trigger' onClick={()=>{setOpen(!open)}}>
-        <Karakterler/>
-        </div>
-        <div className={`dropdown-menu ${open? 'active': 'inactive'}`}>
-         
-            
-              <Info/>
-            
-          
-        </div>
-    </div>
-  </div>
+      
+          <Karakterler/>
+       
+    </div>      
+        
+    
+ 
   );
 }
 
