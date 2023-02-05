@@ -6,7 +6,7 @@ import { Dropdown } from "bootstrap";
 import Karakterler from "./Karakter";
 
 export default function Info (){
-  const [char, setChar]=useState([]);
+  /*const [char, setChar]=useState([]);
 
   useEffect(()=>{
       
@@ -20,12 +20,12 @@ export default function Info (){
 }, []);
   
 
- /* const ScButton=styled.button`
+ const ScButton=styled.button`
   display:flex;
   flex-direction:column;
   margin:auto;
   `
-*/
+
 
 
   return(
@@ -49,6 +49,6 @@ export default function Info (){
       </div>
   )
       
-      
+      */
   
 }

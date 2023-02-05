@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, {useState,useEffect} from 'react';
 import './App.css';
 import Karakterler from "./components/Karakter";
-import Info from './components/Info';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 
@@ -32,11 +31,14 @@ const App = () => {
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
+  
+
 
   return (
     <div className="App">
       
       <h1 className="Header">Karakterler</h1>
+      
       
           <Karakterler/>
        

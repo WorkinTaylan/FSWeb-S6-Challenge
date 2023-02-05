@@ -3,14 +3,15 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import App from "../App";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { response } from "msw";
 import styled from "styled-components";
-import Info from "./Info";
-import { Accordion } from "react-bootstrap";
+import AramaCubugu from "./AramaCubugu";
 
 export default function Karakterler(){
     const [char, setChar]=useState([]);
-    const[accordion,setActiveAccordion]=useState(-1)
+    const[accordion,setActiveAccordion]=useState()
+    const[page, setPageNum]=useState(2)
+    const [aramaKriteri, setaramaKriteri]=useState(null);
+   
 
     useEffect(()=>{
         
@@ -35,10 +36,14 @@ export default function Karakterler(){
     opacity:20;
     
     `*/
+    const aramaYap=(e)=>{
+        setaramaKriteri(e);
+        setChar(char.filter((item)=>item.name.includes(e)))
+    }
 
     function toggleAccordion(index){
         if(index===accordion){
-            setActiveAccordion(-1);
+            setActiveAccordion();
             return ;
         }
         setActiveAccordion(index);
@@ -46,15 +51,16 @@ export default function Karakterler(){
 
     const ScInfos=styled.div`
         color:white;
+        text-align:left;
     `
 
 
     return(
         <>
+        <div>
+            <AramaCubugu aramaYap={aramaYap} aramaKriteri={aramaKriteri}/>
+        </div>
         <div className="container">
-            <div>
-                <span className="accordion-title">Karakterler</span>
-            </div>
             <div className="accordion-content">
                 {char.map((person,index)=>
                     <div key={index} onClick={()=>toggleAccordion(index)}>
